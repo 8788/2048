@@ -5,6 +5,7 @@
  */
 
 ;(function (window, document, undefined) {
+    'use strict';
 
     var Tween = {
         linear: function(t,b,c,d) {
@@ -151,7 +152,7 @@
          */
         toggleClass: function (ele, cls) {
             if (util.hasClass(ele, cls)) {
-                removeClass(ele, cls);
+                util.removeClass(ele, cls);
             } else {
                 util.addClass(ele, cls);
             }

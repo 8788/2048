@@ -4,6 +4,7 @@
  */
 
 ;(function (win) {
+    'use strict';
 
     function init() {
         game.model.initModel();

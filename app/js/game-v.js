@@ -4,6 +4,8 @@
  */
 
 ;(function (win) {
+    'use strict';
+    
     var gridSize = 80;
     var gridGap = 15;
     var box = document.getElementById('box');

@@ -4,6 +4,8 @@
  */
 
 ;(function (win) {
+    'use strict';
+    
     var score = 0;
     var nums = new Array();
     var enabled = new Array();
