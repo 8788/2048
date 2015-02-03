@@ -59,7 +59,7 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> - v<%= pkg.version %> */'
             },
             main: {
-                src: [config.source + 'js/util.js', config.source + 'js/game-m.js', config.source + 'js/game-v.js', config.source + 'js/game-c.js'],
+                src: [config.source + 'js/util.js', config.source + 'js/model.js', config.source + 'js/view.js', config.source + 'js/control.js'],
                 dest: config.deploy + 'js/script.js'
             }
         },
