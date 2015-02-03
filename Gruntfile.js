@@ -1,30 +1,38 @@
 module.exports = function(grunt) {
     'use strict';
-    
+
     var config = {
-        source: 'app/',         // 源码目录
-        deploy: 'deploy/'       // 发布目录
+        app: 'app',
+        dist: 'dist'
     };
 
-    // load all grunt tasks
     require('load-grunt-tasks')(grunt);
+    require('time-grunt')(grunt);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        config: config,
+
+        clean: {
+            main: {
+                src: config.dist
+            }
+        },
+
         copy: {
             html: {
                 expand: true,
-                cwd: config.source,
+                cwd: config.app,
                 src: '*.html',
-                dest: config.deploy
+                dest: config.dist
             }
         },
 
         compass: {
             main: {
                 options: {
-                    basePath: config.source,
+                    basePath: config.app,
                     sassDir: 'sass',
                     cssDir: 'css',
                     imagesDir: 'img',
@@ -40,45 +48,44 @@ module.exports = function(grunt) {
 
         cssmin: {
             main: {
-                src: [config.source + 'css/*.css'],
-                dest: config.deploy + 'css/style.css'
-            }
-        },
-
-        imagemin: {
-            main: {
-                expand: true,
-                cwd: config.source + 'img',
-                src: '**/*.{png,jpg,jpeg,gif}',
-                dest: config.deploy + 'img'
+                src: [config.app + '/css/*.css'],
+                dest: config.dist + '/css/style.css'
             }
         },
 
         uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> */'
-            },
             main: {
-                src: [config.source + 'js/util.js', config.source + 'js/model.js', config.source + 'js/view.js', config.source + 'js/control.js'],
-                dest: config.deploy + 'js/script.js'
+                src: [config.app + '/js/util.js', config.app + '/js/model.js', config.app + '/js/view.js', config.app + '/js/control.js'],
+                dest: config.dist + '/js/script.js'
             }
         },
 
         usemin: {
-            html: config.deploy + '*.html',
+            html: config.dist + '/*.html',
             options: {
-                dest: config.deploy
+                dest: config.dist
+            }
+        },
+
+        connect: {
+            server: {
+                options: {
+                    port: 8001,
+                    hostname: 'localhost',
+                    open: true,
+                    base: 'dist'
+                }
             }
         },
 
         watch: {
             main: {
-                files: [config.source + 'sass/**'],
+                files: [config.app + '/sass/**'],
                 tasks: ['compass', 'build']
             }
         }
     });
 
-    grunt.registerTask('build', ['copy', 'compass', 'cssmin', 'imagemin', 'uglify', 'usemin']);
-    grunt.registerTask('default', ['build', 'watch']);
+    grunt.registerTask('default', ['copy', 'compass', 'cssmin', 'uglify', 'usemin']);
+    grunt.registerTask('server', ['default', 'connect', 'watch']);
 };

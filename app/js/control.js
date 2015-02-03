@@ -1,8 +1,3 @@
-/**
- * @fileOverview 2048
- * @authors @Bubblings
- */
-
 ;(function (win) {
     'use strict';
 

@@ -1,11 +1,6 @@
-/**
- * @fileOverview 2048
- * @authors @Bubblings
- */
-
 ;(function (win) {
     'use strict';
-    
+
     var gridSize = 80;
     var gridGap = 15;
     var box = document.getElementById('box');
@@ -87,7 +82,7 @@
         number.style.width = 0;
         number.style.height = 0;
         box.appendChild(number);
-        
+
         util.animate(number, {
             width: 80,
             height: 80,

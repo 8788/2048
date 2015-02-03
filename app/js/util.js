@@ -1,9 +1,3 @@
-/**
- * @fileOverview util.js
- * @authors @Bubblins(http://weibo.com/607768123)
- * @version 0.1.0
- */
-
 ;(function (window, document, undefined) {
     'use strict';
 
@@ -44,7 +38,7 @@
         String.prototype.trim = function () {
             return this.replace(/^[\s\uFEFF\xa0\u3000\u00A0]+|[\s\uFEFF\xa0\u3000\u00A0]+$/g, '');
         };
-    }    
+    }
 
 
     var util = {
@@ -127,7 +121,7 @@
                     ele.className = (ele.className.trim() + ' ' + cls).trim();
                 }
             }
-        },    
+        },
 
         /**
          * removeClass

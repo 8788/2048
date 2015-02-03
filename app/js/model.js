@@ -1,11 +1,6 @@
-/**
- * @fileOverview 2048
- * @authors @Bubblings
- */
-
 ;(function (win) {
     'use strict';
-    
+
     var score = 0;
     var nums = new Array();
     var enabled = new Array();

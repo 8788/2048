@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-/**
- * @fileOverview 
- */
-
 $wrapWidth: 480px;
 $gridSize: 80px;
 $baseGap: 15px;
@@ -33,7 +29,7 @@ body {
 }
 .head,
 .box {
-    
+
 }
 
 .head {
@@ -83,7 +79,7 @@ body {
     background-color: #BBADA0;
 }
 
-.grid { 
+.grid {
     position: absolute;
     width: $gridSize;
     height: $gridSize;
@@ -98,7 +94,7 @@ body {
     border-radius: 3px;
     width: $gridSize;
     height: $gridSize;
-    line-height: $gridSize; 
+    line-height: $gridSize;
     font-size: 36px;
     font-weight: bold;
     text-align: center;
@@ -108,41 +104,41 @@ body {
 .value-2 {
     background: #eee4da;
     color: #776E65;
-}  
+}
 .value-4 {
     background: #ece0c8;
     color: #776E65;
-}  
+}
 .value-8 {
     background: #f2b179;
-}  
+}
 .value-16 {
     background:#f59563;
-}  
+}
 .value-32 {
     background:#f57c5f;
-}  
+}
 .value-64 {
-    background:#f65d3b;  
-}  
+    background:#f65d3b;
+}
 .value-128 {
     background:#edce71;
-}  
+}
 .value-256 {
-    background:#edcc61;  
-}  
+    background:#edcc61;
+}
 .value-512 {
-    background:#ecc850;  
-}  
+    background:#ecc850;
+}
 .value-1024 {
-    background:#edc53f;  
-}  
+    background:#edc53f;
+}
 .value-2048 {
-    background:#eec22e;  
+    background:#eec22e;
 }
 .value-4096 {
-    background:#aa66cc;  
+    background:#aa66cc;
 }
 .value-8192 {
-    background:#9933cc;  
+    background:#9933cc;
 }
